@@ -13,7 +13,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the repository from GitHub
-                git branch: 'main', url: 'https://github.com/navin-devops/website-spring.git'
+                git branch: 'main', url: 'https://github.com/Revi-2001/jenkins-pipeline.git'
             }
         }
 
@@ -31,15 +31,15 @@ pipeline {
                 script {
                     if (params.ENVIRONMENT == 'dev') {
                         // Set environment variables for dev environment
-                        env.GCP_PROJECT = 'gleaming-lead-438006-g4'
+                        env.GCP_PROJECT = 'optimistic-yew-442501-g8'
                         env.GCP_REGION = 'us-central1'
                     } else if (params.ENVIRONMENT == 'staging') {
                         // Set environment variables for staging environment
-                        env.GCP_PROJECT = 'gleaming-lead-438006-g4'
+                        env.GCP_PROJECT = 'optimistic-yew-442501-g8'
                         env.GCP_REGION = 'us-central1'
                     } else if (params.ENVIRONMENT == 'prod') {
                         // Set environment variables for prod environment
-                        env.GCP_PROJECT = 'gleaming-lead-438006-g4'
+                        env.GCP_PROJECT = 'optimistic-yew-442501-g8'
                         env.GCP_REGION = 'us-central1'
                     }
                     echo "Deploying to ${params.ENVIRONMENT} environment"
